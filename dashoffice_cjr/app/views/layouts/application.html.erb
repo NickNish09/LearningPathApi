@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DashofficeCjr</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" %>
+    <%= stylesheet_link_tag "css/linearicons.css" %>
+    <%= stylesheet_link_tag "css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "css/owl.carousel.css" %>
+    <%= stylesheet_link_tag "css/main.css" %>
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" %>
+    <%= javascript_include_tag "js/jquery.ajaxchimp.min.js" %>
+    <%= javascript_include_tag "js/parallax.min.js" %>
+    <%= javascript_include_tag "js/owl.carousel.min.js" %>
+    <%= javascript_include_tag "js/jquery.magnific-popup.min.js" %>
+    <%= javascript_include_tag "js/jquery.sticky.js" %>
+    <%= javascript_include_tag "js/main.js" %>
+
+
+  </body>
+</html>
