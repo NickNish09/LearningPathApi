@@ -61,3 +61,446 @@ Processing by MainController#index as HTML
 Completed 200 OK in 105ms (Views: 103.8ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (9077.4ms)[0m  [1m[35mCREATE DATABASE "dashoffice_cjr_development" ENCODING = 'unicode'[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6689.0ms)[0m  [1m[35mCREATE DATABASE "dashoffice_cjr_test" ENCODING = 'unicode'[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (186.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (86.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3984984924356530605)[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to DeviseCreateUsers (20190412114751)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (116.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114751_devise_create_users.rb:5
+  [1m[35m (32.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190412114751_devise_create_users.rb:39
+  [1m[35m (28.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190412114751_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114751"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCores (20190412114758)
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (81.4ms)[0m  [1m[35mCREATE TABLE "cores" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114758_create_cores.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114758"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRoles (20190412114803)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (77.6ms)[0m  [1m[35mCREATE TABLE "roles" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114803_create_roles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114803"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTroubles (20190412114810)
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (77.6ms)[0m  [1m[35mCREATE TABLE "troubles" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114810_create_troubles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114810"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddFieldsToUser (20190412114814)
+  [1m[35m (11.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "role_id" bigint[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:5
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_role_id" ON "users"  ("role_id")[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:5
+  [1m[35m (15.8ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_642f17018b"
+FOREIGN KEY ("role_id")
+  REFERENCES "roles" ("id")
+[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "core_id" bigint[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:6
+  [1m[35m (44.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_core_id" ON "users"  ("core_id")[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:6
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_4e12d75d3d"
+FOREIGN KEY ("core_id")
+  REFERENCES "cores" ("id")
+[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "active" boolean[0m
+  ↳ db/migrate/20190412114814_add_fields_to_user.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114814"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserTroubles (20190412114820)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (48.9ms)[0m  [1m[35mCREATE TABLE "user_troubles" ("id" bigserial primary key, "user_id" bigint, "trouble_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4dac391ac5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_edeb0e808f"
+FOREIGN KEY ("trouble_id")
+  REFERENCES "troubles" ("id")
+)[0m
+  ↳ db/migrate/20190412114820_create_user_troubles.rb:3
+  [1m[35m (79.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_troubles_on_user_id" ON "user_troubles"  ("user_id")[0m
+  ↳ db/migrate/20190412114820_create_user_troubles.rb:3
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_troubles_on_trouble_id" ON "user_troubles"  ("trouble_id")[0m
+  ↳ db/migrate/20190412114820_create_user_troubles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114820"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateFeedbacks (20190412114825)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (78.7ms)[0m  [1m[35mCREATE TABLE "feedbacks" ("id" bigserial primary key, "user_id" bigint, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c57bb6cf28"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190412114825_create_feedbacks.rb:3
+  [1m[35m (35.7ms)[0m  [1m[35mCREATE  INDEX  "index_feedbacks_on_user_id" ON "feedbacks"  ("user_id")[0m
+  ↳ db/migrate/20190412114825_create_feedbacks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114825"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateCustomers (20190412114831)
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (127.9ms)[0m  [1m[35mCREATE TABLE "customers" ("id" bigserial primary key, "name" character varying, "email" character varying, "phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114831_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114831"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateSteps (20190412114837)
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (72.0ms)[0m  [1m[35mCREATE TABLE "steps" ("id" bigserial primary key, "name" character varying, "deadline" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114837_create_steps.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114837"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateDeals (20190412114841)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (71.8ms)[0m  [1m[35mCREATE TABLE "deals" ("id" bigserial primary key, "customer_id" bigint, "name" character varying, "description" text, "primary_seller_id" bigint, "secondary_seller_id" bigint, "start_date" date, "active" boolean, "done" boolean, "price" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7e1cd45972"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:3
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE  INDEX  "index_deals_on_customer_id" ON "deals"  ("customer_id")[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:3
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE  INDEX  "index_deals_on_primary_seller_id" ON "deals"  ("primary_seller_id")[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:3
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE  INDEX  "index_deals_on_secondary_seller_id" ON "deals"  ("secondary_seller_id")[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "deals" ADD CONSTRAINT "fk_rails_e5e8ede5b2"
+FOREIGN KEY ("primary_seller_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "deals" ADD CONSTRAINT "fk_rails_b10938c472"
+FOREIGN KEY ("secondary_seller_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20190412114841_create_deals.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114841"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateDealSteps (20190412114845)
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (39.3ms)[0m  [1m[35mCREATE TABLE "deal_steps" ("id" bigserial primary key, "step_id" bigint, "deal_id" bigint, "entry_date" date, "conclusion_date" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c4e5fbe4b7"
+FOREIGN KEY ("step_id")
+  REFERENCES "steps" ("id")
+, CONSTRAINT "fk_rails_9430ca4ed3"
+FOREIGN KEY ("deal_id")
+  REFERENCES "deals" ("id")
+)[0m
+  ↳ db/migrate/20190412114845_create_deal_steps.rb:3
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE  INDEX  "index_deal_steps_on_step_id" ON "deal_steps"  ("step_id")[0m
+  ↳ db/migrate/20190412114845_create_deal_steps.rb:3
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE  INDEX  "index_deal_steps_on_deal_id" ON "deal_steps"  ("deal_id")[0m
+  ↳ db/migrate/20190412114845_create_deal_steps.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114845"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateTags (20190412114850)
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (77.5ms)[0m  [1m[35mCREATE TABLE "tags" ("id" bigserial primary key, "name" character varying, "color" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114850_create_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114850"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateDealTags (20190412114854)
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE TABLE "deal_tags" ("id" bigserial primary key, "deal_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_74ca825fd9"
+FOREIGN KEY ("deal_id")
+  REFERENCES "deals" ("id")
+, CONSTRAINT "fk_rails_36a27d094c"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+)[0m
+  ↳ db/migrate/20190412114854_create_deal_tags.rb:3
+  [1m[35m (43.4ms)[0m  [1m[35mCREATE  INDEX  "index_deal_tags_on_deal_id" ON "deal_tags"  ("deal_id")[0m
+  ↳ db/migrate/20190412114854_create_deal_tags.rb:3
+  [1m[35m (33.3ms)[0m  [1m[35mCREATE  INDEX  "index_deal_tags_on_tag_id" ON "deal_tags"  ("tag_id")[0m
+  ↳ db/migrate/20190412114854_create_deal_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114854"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateProjects (20190412114900)
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (68.1ms)[0m  [1m[35mCREATE TABLE "projects" ("id" bigserial primary key, "name" character varying, "description" text, "price" float, "customer_id" bigint, "start_date" date, "conclusion_date" date, "open_scope" boolean, "sprints" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_47c768ed16"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  ↳ db/migrate/20190412114900_create_projects.rb:3
+  [1m[35m (50.4ms)[0m  [1m[35mCREATE  INDEX  "index_projects_on_customer_id" ON "projects"  ("customer_id")[0m
+  ↳ db/migrate/20190412114900_create_projects.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114900"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRequirements (20190412114903)
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (75.9ms)[0m  [1m[35mCREATE TABLE "requirements" ("id" bigserial primary key, "name" character varying, "price" float, "sprints" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190412114903_create_requirements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114903"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateProjectRequirements (20190412114908)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (32.4ms)[0m  [1m[35mCREATE TABLE "project_requirements" ("id" bigserial primary key, "project_id" bigint, "requirement_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d1dd04a8fd"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+, CONSTRAINT "fk_rails_70df0377e9"
+FOREIGN KEY ("requirement_id")
+  REFERENCES "requirements" ("id")
+)[0m
+  ↳ db/migrate/20190412114908_create_project_requirements.rb:3
+  [1m[35m (42.8ms)[0m  [1m[35mCREATE  INDEX  "index_project_requirements_on_project_id" ON "project_requirements"  ("project_id")[0m
+  ↳ db/migrate/20190412114908_create_project_requirements.rb:3
+  [1m[35m (58.5ms)[0m  [1m[35mCREATE  INDEX  "index_project_requirements_on_requirement_id" ON "project_requirements"  ("requirement_id")[0m
+  ↳ db/migrate/20190412114908_create_project_requirements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114908"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateProjectDevelopers (20190412114912)
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE TABLE "project_developers" ("id" bigserial primary key, "project_id" bigint, "user_id" bigint, "project_manager" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_caa521d3a8"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+, CONSTRAINT "fk_rails_17057fa45e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190412114912_create_project_developers.rb:3
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE  INDEX  "index_project_developers_on_project_id" ON "project_developers"  ("project_id")[0m
+  ↳ db/migrate/20190412114912_create_project_developers.rb:3
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE  INDEX  "index_project_developers_on_user_id" ON "project_developers"  ("user_id")[0m
+  ↳ db/migrate/20190412114912_create_project_developers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114912"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateProjectTags (20190412114917)
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (60.8ms)[0m  [1m[35mCREATE TABLE "project_tags" ("id" bigserial primary key, "project_id" bigint, "tag_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_a52ff3d861"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+, CONSTRAINT "fk_rails_980b91da53"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+)[0m
+  ↳ db/migrate/20190412114917_create_project_tags.rb:3
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE  INDEX  "index_project_tags_on_project_id" ON "project_tags"  ("project_id")[0m
+  ↳ db/migrate/20190412114917_create_project_tags.rb:3
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE  INDEX  "index_project_tags_on_tag_id" ON "project_tags"  ("tag_id")[0m
+  ↳ db/migrate/20190412114917_create_project_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190412114917"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-12 12:01:03.960979"], ["updated_at", "2019-04-12 12:01:03.960979"]]
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3984984924356530605)[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/diegod/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mTrouble Load (1.3ms)[0m  [1m[34mSELECT "troubles".* FROM "troubles"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTrouble Create (1.0ms)[0m  [1m[32mINSERT INTO "troubles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "OAC"], ["created_at", "2019-04-12 12:01:04.216035"], ["updated_at", "2019-04-12 12:01:04.216035"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mRole Create (0.8ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gerente"], ["created_at", "2019-04-12 12:01:04.251229"], ["updated_at", "2019-04-12 12:01:04.251229"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCore Load (0.6ms)[0m  [1m[34mSELECT "cores".* FROM "cores"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCore Create (0.8ms)[0m  [1m[32mINSERT INTO "cores" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "NUT"], ["created_at", "2019-04-12 12:01:04.284209"], ["updated_at", "2019-04-12 12:01:04.284209"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "icarorezende@cjr.org.br"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "admin", "role_id", "core_id", "active") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "icarorezende@cjr.org.br"], ["encrypted_password", "$2a$11$hhI4VynmYf1PiSPuwbpkA.PdQlym//rNICE4V1xi30mzDapsr5tza"], ["created_at", "2019-04-12 12:01:04.587433"], ["updated_at", "2019-04-12 12:01:04.587433"], ["name", "Icaro Rezende"], ["admin", false], ["role_id", 1], ["core_id", 1], ["active", true]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "vitorbandeira@cjr.org.br"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "admin", "role_id", "core_id", "active") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "vitorbandeira@cjr.org.br"], ["encrypted_password", "$2a$11$9ruatBHrZeJhwbbyjnnm3.TD1G4trVAYi85tqxroQQj1Hmc2xXYbW"], ["created_at", "2019-04-12 12:01:04.752082"], ["updated_at", "2019-04-12 12:01:04.752082"], ["name", "Vitor Ribas"], ["admin", false], ["role_id", 1], ["core_id", 1], ["active", true]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUserTrouble Load (1.2ms)[0m  [1m[34mSELECT "user_troubles".* FROM "user_troubles"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mTrouble Load (0.7ms)[0m  [1m[34mSELECT  "troubles".* FROM "troubles" WHERE "troubles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUserTrouble Create (2.0ms)[0m  [1m[32mINSERT INTO "user_troubles" ("user_id", "trouble_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["trouble_id", 1], ["created_at", "2019-04-12 12:01:05.164058"], ["updated_at", "2019-04-12 12:01:05.164058"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mTrouble Load (0.5ms)[0m  [1m[34mSELECT  "troubles".* FROM "troubles" WHERE "troubles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUserTrouble Create (0.7ms)[0m  [1m[32mINSERT INTO "user_troubles" ("user_id", "trouble_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["trouble_id", 1], ["created_at", "2019-04-12 12:01:05.174109"], ["updated_at", "2019-04-12 12:01:05.174109"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[36mStep Load (0.7ms)[0m  [1m[34mSELECT "steps".* FROM "steps"[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mStep Create (0.8ms)[0m  [1m[32mINSERT INTO "steps" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Apresentação"], ["created_at", "2019-04-12 12:01:05.201248"], ["updated_at", "2019-04-12 12:01:05.201248"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mStep Create (0.4ms)[0m  [1m[32mINSERT INTO "steps" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Contato"], ["created_at", "2019-04-12 12:01:05.205465"], ["updated_at", "2019-04-12 12:01:05.205465"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCustomer Create (0.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "email", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bruno Lopes"], ["email", "vasila1@vasilo.com"], ["phone", "123456789"], ["created_at", "2019-04-12 12:01:05.232606"], ["updated_at", "2019-04-12 12:01:05.232606"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mTag Load (10.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mTag Create (0.8ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Empresa"], ["created_at", "2019-04-12 12:01:05.269772"], ["updated_at", "2019-04-12 12:01:05.269772"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mDeal Load (1.5ms)[0m  [1m[34mSELECT "deals".* FROM "deals"[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mDeal Create (1.6ms)[0m  [1m[32mINSERT INTO "deals" ("customer_id", "name", "description", "primary_seller_id", "secondary_seller_id", "start_date", "active", "done", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["customer_id", 1], ["name", "proaDHO"], ["description", "Rogue"], ["primary_seller_id", 1], ["secondary_seller_id", 2], ["start_date", "2019-01-10"], ["active", true], ["done", false], ["price", 8.88], ["created_at", "2019-04-12 12:01:05.308462"], ["updated_at", "2019-04-12 12:01:05.308462"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+Started GET "/" for ::1 at 2019-04-12 12:05:38 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/diegod/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+Started GET "/" for ::1 at 2019-04-12 12:05:42 +0000
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (5991.2ms)
+  Rendered main/index.html.erb within layouts/application (2015.3ms)
+Completed 200 OK in 3321ms (Views: 3315.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 7400ms (Views: 7391.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-12 12:51:25 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (810.1ms)
+Completed 200 OK in 1123ms (Views: 1062.3ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-12 12:51:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/diegod/.rvm/gems/ruby-2.6.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 144ms (Views: 143.3ms | ActiveRecord: 0.0ms)
+
+
