@@ -10,10 +10,26 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery2
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery2
+//= require datatables
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+jQuery(document).on('turbolinks:load', function() {
+    $('#customers-datatable').dataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": $('#customers-datatable').data('source'),
+    "pagingType": "full_numbers",
+    "columns": [
+    {"data": "id"},
+    {"data": "name"},
+    {"data": "email"},
+    {"data": "phone"}
+    ]
+    });
+    });

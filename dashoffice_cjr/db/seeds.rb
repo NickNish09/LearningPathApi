@@ -26,3 +26,7 @@ Tag.destroy_all
 t1 = Tag.create!(name: 'Empresa')
 Deal.destroy_all
 d1 = Deal.create!(customer_id: ct.id, name: 'proaDHO', description: 'Rogue', primary_seller_id: u1.id, secondary_seller_id: u2.id, start_date: '2019-01-10', active: true, done: false, price: 8.88)
+
+5000.times do |i|
+    Customer.create(name: "Tiago #{i}", email: "tiago#{i}@tiagao.taigo", phone: "6199999-999#{i}")
+end
