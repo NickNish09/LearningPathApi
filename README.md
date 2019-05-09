@@ -105,6 +105,12 @@ end
 
 ```
 
+- Criar sessions controller
+
+```
+rails g controller v1/sessions
+```
+
 - Atualizar sessions controller para criar login
 ```
 def create
