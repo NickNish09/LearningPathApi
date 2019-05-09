@@ -8,5 +8,6 @@ registrations: 'users/registrations'}
   namespace :v1, defaults: { format: :json } do
     resources :customers
     resource :login, only: [:create], controller: :sessions
+    get "current_user" => "sessions#current_user_data"
   end
 end

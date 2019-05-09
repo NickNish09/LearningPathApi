@@ -51987,3 +51987,100 @@ Migrating to AddAccessTokenToUsers (20190509153656)
   [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 12:53:12 -0300
+  [1m[35m (59.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nicknish/.rbenv/versions/2.6.0/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]", "session"=>{"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]"}}
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 12:59:06 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]", "session"=>{"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 12:59:33 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]", "session"=>{"email"=>"nicholas@cjr.org", "password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 12:59:48 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:00:40 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLPM"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 500 Internal Server Error in 123ms (Views: 0.2ms | ActiveRecord: 35.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/v1/sessions_controller.rb:4:in `current_user_data'
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:01:23 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLPM"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 500 Internal Server Error in 49ms (Views: 0.2ms | ActiveRecord: 10.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/v1/sessions_controller.rb:4:in `current_user_data'
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:01:56 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLP"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 500 Internal Server Error in 29ms (Views: 0.3ms | ActiveRecord: 7.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/v1/sessions_controller.rb:4:in `current_user_data'
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:02:35 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLPM"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 500 Internal Server Error in 39ms (Views: 0.8ms | ActiveRecord: 7.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/v1/sessions_controller.rb:4:in `current_user_data'
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:02:52 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:03:23 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLPM"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/v1/current_user.json" for ::1 at 2019-05-09 13:03:29 -0300
+Processing by V1::SessionsController#current_user_data as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "Y3Tsvj-g9LGAHv_yBLP"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:21
+Completed 401 Unauthorized in 16ms (Views: 0.2ms | ActiveRecord: 12.2ms)
+
+
